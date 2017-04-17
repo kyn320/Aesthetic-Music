@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Note : MonoBehaviour {
+public class Note : MonoBehaviour
+{
 
     public static GameManager gameManager;
 
@@ -17,13 +18,16 @@ public class Note : MonoBehaviour {
     {
         gameManager = GameManager.instance;
         tr = GetComponent<Transform>();
-        
+
     }
 
 
     private void FixedUpdate()
     {
-        notePos.x = gameManager.judgeLine.position.x + ( dir * (noteTime - (gameManager.currentTime + gameManager.sync)) * gameManager.speed * (gameManager.bpm / 60) ) ;
+        if (dir < 0)
+            notePos.x = gameManager.judgeLine[0].position.x + (dir * (noteTime - (gameManager.currentTime + gameManager.sync)) * gameManager.speed * (gameManager.bpm / 60));
+        else
+            notePos.x = gameManager.judgeLine[1].position.x + (dir * (noteTime - (gameManager.currentTime + gameManager.sync)) * gameManager.speed * (gameManager.bpm / 60));
         tr.position = notePos;
 
     }

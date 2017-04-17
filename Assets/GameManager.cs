@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour {
     public float speed;
     public float sync;
 
-    public Transform judgeLine;
+    public Transform[] judgeLine;
 
     public GameObject note;
 
@@ -30,8 +30,14 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Instantiate(note);	
-	}
+        int dir = 1;
+        for (int i = 1; i <= 20; i++) {
+            GameObject g = Instantiate(note);
+            g.GetComponent<Note>().noteTime = i * 0.8f;
+            g.GetComponent<Note>().dir = dir * -1;
+            dir *= -1; 
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
