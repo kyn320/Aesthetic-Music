@@ -81,8 +81,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CameraFollow.cs" />
+    <Compile Include="Assets\FollowJudge.cs" />
     <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\Note.cs" />
+    <Compile Include="Assets\Player.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

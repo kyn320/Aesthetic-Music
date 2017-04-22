@@ -6,7 +6,7 @@ public class FollowJudge : MonoBehaviour {
 
     public Transform target;
 
-    void FixedUpdate() {
+    void LateUpdate() {
         transform.position = target.position;
     }
 }

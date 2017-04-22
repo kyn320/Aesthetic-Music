@@ -8,7 +8,7 @@ public class Note : MonoBehaviour
     public static GameManager gameManager;
 
     public float noteTime;
-
+    
 
     public int dir = -1;
     private Vector2 notePos;
@@ -30,5 +30,15 @@ public class Note : MonoBehaviour
             notePos.x = gameManager.judgeLine[1].position.x + (dir * (noteTime - (gameManager.currentTime + gameManager.sync)) * gameManager.speed * (gameManager.bpm / 60));
         tr.position = notePos;
 
+        if (noteTime < gameManager.currentTime - 0.05f)
+        {
+            gameManager.SetDebugText("Fail");
+            gameManager.noteList.Remove(this);
+            Destroy(this.gameObject);
+        }
+
     }
+
+
+    
 }
