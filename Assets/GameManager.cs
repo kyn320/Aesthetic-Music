@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
     public bool JudgeCheck(Note note) {
         float over = Mathf.Abs(note.noteTime - currentTime);
 
-        if (over <= 1f)
+        if (over <= 1.5f)
         {
             noteList.Remove(note);
             Destroy(note.gameObject);

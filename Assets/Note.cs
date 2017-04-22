@@ -30,7 +30,7 @@ public class Note : MonoBehaviour
             notePos.x = gameManager.judgeLine[1].position.x + (dir * (noteTime - (gameManager.currentTime + gameManager.sync)) * gameManager.speed * (gameManager.bpm / 60));
         tr.position = notePos;
 
-        if (noteTime < gameManager.currentTime - 0.05f)
+        if (noteTime < gameManager.currentTime - 0.5f)
         {
             gameManager.SetDebugText("Fail");
             gameManager.noteList.Remove(this);
