@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
+    public static readonly float JUDGEMENT_TIME = 0.16f; // 40 (80) frames;
+
     public float bpm;
     public float currentTime;
 
@@ -50,10 +52,11 @@ public class GameManager : MonoBehaviour
             dir *= -1;
             for (int i = 1; i <= 10; i++)
             {
+                
                 GameObject g = Instantiate(note);
                 g.transform.parent = transform;
                 noteList.Add(g.GetComponent<Note>());
-                g.GetComponent<Note>().noteTime = Random.Range(0.4f,1f) * cnt;
+                g.GetComponent<Note>().noteTime = cnt;
                 g.GetComponent<Note>().dir = dir;
                 cnt++;
             }
@@ -71,11 +74,8 @@ public class GameManager : MonoBehaviour
     public bool JudgeCheck(Note note) {
         float over = Mathf.Abs(note.noteTime - currentTime);
 
-        if (over <= 1.5f)
+        if (over <= JUDGEMENT_TIME)
         {
-            noteList.Remove(note);
-            Destroy(note.gameObject);
-            SetDebugText("Success");
             return true;
         }
         else

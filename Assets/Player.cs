@@ -15,15 +15,9 @@ public class Player : MonoBehaviour {
         ani = GetComponent<Animator>();
         audioPlayer = GetComponent<AudioSource>();
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-        //판정을 어떻게 해야 할까
-        // 좌우 입력을 따로 처리 할까?
-        // 눌렀을때 시간 체크?
-        // 오차 시각 = Mathf.Abs(노트 시각 - 현재 시각);
-        // 판정 Square = 0.016f;
-        // if (오차 시각 <= Square) 네 판정 = Square;
+
+
+	void Update () {
 
         if (Input.GetKeyDown(KeyCode.LeftArrow)) {
             CheckNote(-1);
@@ -33,36 +27,48 @@ public class Player : MonoBehaviour {
         }
 	}
 
-    void CheckNote(int _dir) {
-        hit = Physics2D.Raycast(transform.position, Vector2.right * _dir, 5f);
-        Debug.DrawRay(transform.position, Vector2.right * _dir * 5f);
-        if (hit.collider != null)
+    void CheckNote(int _dir)
+    {
+        Note targetNote = null;
+        GameManager g = GameManager.instance;
+        for (int i = 0; i < g.noteList.Count; ++i)
         {
-            if (hit.collider.gameObject.GetComponent<Note>().dir == _dir)
-            {
-                if (GameManager.instance.JudgeCheck(hit.collider.gameObject.GetComponent<Note>()))
-                {
-                    ShotAudio();
-                    PlayAnimation(_dir);
-                }
-            }
+            Note n = g.noteList[i];
+            if (n.dir != _dir)
+                continue;
+            if (!g.JudgeCheck(n))
+                continue;
+               
+            if (targetNote == null)
+                targetNote = n;
+            else if (n.noteTime < targetNote.noteTime)
+                targetNote = n;
         }
+
+        if (targetNote == null)
+            return;
+
+        g.noteList.Remove(targetNote);
+        Destroy(targetNote.gameObject);
+        g.SetDebugText("Success");
+        ShotAudio();
+        PlayAnimation(_dir);
     }
 
     void PlayAnimation(int _dir) {
         if (dir != _dir)
         {
             
-            ani.SetTrigger("Ani_2");
+            ani.SetTrigger("Ani_R");
         }
         else {
-            ani.SetTrigger("Ani_" + Random.Range(0,2));
+            ani.SetTrigger("Ani_2");
         }
     }
 
     public void SetDir(int _dir) {
         dir = dir * _dir;
-        transform.localScale = new Vector2(dir,1);
+        transform.parent.localScale = new Vector2(dir,1);
     }
 
     public void ShotAudio() {
