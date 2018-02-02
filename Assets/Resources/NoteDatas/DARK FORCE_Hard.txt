@@ -1,0 +1,17 @@
+NoteDataVersion:1
+StartBPM:150
+NoteSync:-130
+NormalNote:0:1600
+NormalNote:1:1600
+NormalNote:0:4800
+NormalNote:1:5600
+NormalNote:0:6400
+DragNote:1:6400:-1
+DragNote:0:7200:-1
+NormalNote:1:7200
+NormalNote:0:8000
+NormalNote:1:8200
+NormalNote:0:8400
+NormalNote:0:8600
+NormalNote:1:8500
+NormalNote:1:8700

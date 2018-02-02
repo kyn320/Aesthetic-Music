@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Player
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Hip
+    m_Weight: 1
+  - m_Path: Hip/Body
+    m_Weight: 1
+  - m_Path: Hip/Neck
+    m_Weight: 1
+  - m_Path: Hip/Neck/Head
+    m_Weight: 1
+  - m_Path: Hip/ArmR
+    m_Weight: 1
+  - m_Path: Hip/ArmR/Arm1
+    m_Weight: 1
+  - m_Path: Hip/ArmR/ArmR_D
+    m_Weight: 1
+  - m_Path: Hip/ArmR/ArmR_D/Arm2
+    m_Weight: 1
+  - m_Path: Hip/ArmR/ArmR_D/Arm2/Hand
+    m_Weight: 1
+  - m_Path: Hip/ArmR/ArmR_D/Arm2/Hand/Gun
+    m_Weight: 1
+  - m_Path: Hip/ArmL
+    m_Weight: 1
+  - m_Path: Hip/ArmL/Arm1
+    m_Weight: 1
+  - m_Path: Hip/ArmL/ArmL_D
+    m_Weight: 1
+  - m_Path: Hip/ArmL/ArmL_D/Arm2
+    m_Weight: 1
+  - m_Path: Hip/ArmL/ArmL_D/Arm2/Hand
+    m_Weight: 1
+  - m_Path: Hip/ArmL/ArmL_D/Arm2/Hand/Gun
+    m_Weight: 1
+  - m_Path: Hip/LegR
+    m_Weight: 1
+  - m_Path: Hip/LegR/Leg1
+    m_Weight: 1
+  - m_Path: Hip/LegR/LegR_D
+    m_Weight: 1
+  - m_Path: Hip/LegR/LegR_D/Leg2
+    m_Weight: 1
+  - m_Path: Hip/LegL
+    m_Weight: 1
+  - m_Path: Hip/LegL/Leg1
+    m_Weight: 1
+  - m_Path: Hip/LegL/LegL_D
+    m_Weight: 1
+  - m_Path: Hip/LegL/LegL_D/Leg2
+    m_Weight: 1
+  - m_Path: IK Body
+    m_Weight: 1
+  - m_Path: IK ArmL
+    m_Weight: 1
+  - m_Path: IK ArmR
+    m_Weight: 1
+  - m_Path: IK LegL
+    m_Weight: 1
+  - m_Path: IK LegR
+    m_Weight: 1

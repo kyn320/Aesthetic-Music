@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: e3711225271ef69478da1f6ec6563c06
+timeCreated: 1506569455
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: NOTOSANSCJKKR
+  fontNames:
+  - NOTOSANSCJKKR
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2f8380a37713de140bc05ad3b1f8e8d3, type: 3}
+  - {fileID: 12800000, guid: 7c2fb56c219797d4b86d66942da9a31c, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
